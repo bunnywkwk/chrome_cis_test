@@ -1,0 +1,6 @@
+---
+- name: Harden Google Chrome to CIS
+  hosts: rhel-os
+  become: true
+  roles:
+    - chrome-cis

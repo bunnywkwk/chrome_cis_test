@@ -1,0 +1,25 @@
+---
+# Install
+chrome_cis_install: true
+chrome_cis_channel: stable
+
+# Profiles
+chrome_cis_level_1: true
+chrome_cis_level_2: true
+
+# Site values (null / [] = report only)
+chrome_cis_safe_browsing_protection_level: 1 # 1.2.2: 1 or 2
+chrome_cis_variations: 0 # 1.9
+chrome_cis_password_manager_enabled: false # 2.6.1
+chrome_cis_remote_access_connections: false # 2.8.1
+chrome_cis_remote_access_client_domains: ["lab.example.com"] # 2.8.3
+chrome_cis_proxy_mode: direct # 2.17: direct or system
+chrome_cis_http_allowlist: ["intranet.lab.example.com"] # 2.27
+chrome_cis_clipboard_allowed_urls: ["https://app.lab.example.com"] # 4.2.3
+chrome_cis_clipboard_blocked_urls: ["[*.]example.org"] # 4.2.4
+chrome_cis_window_management_allowed_urls: ["https://app.lab.example.com"] # 4.2.7
+chrome_cis_window_management_blocked_urls: ["[*.]example.org"] # 4.2.8
+chrome_cis_extension_allowlist: [] # used with 2.3.3
+chrome_cis_native_messaging_allowlist: [] # used with 2.5.1
+
+chrome_cis_rule_4_7: false # needs a DoH server, or DNS breaks

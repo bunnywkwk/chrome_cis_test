@@ -3,4 +3,4 @@ roles:
   - name: chrome-cis
     src: https://github.com/bunnywkwk/chrome-cis.git
     scm: git
-    version: staging-option-b
+    version: staging

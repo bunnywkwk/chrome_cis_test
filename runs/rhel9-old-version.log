@@ -1,0 +1,424 @@
+
+PLAY [Harden Google Chrome to CIS] *********************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [rhel9]
+
+TASK [chrome-cis : PRELIM | AUDIT | Check ansible-core version] ****************
+ok: [rhel9]
+
+TASK [chrome-cis : PRELIM | AUDIT | Check the target OS is supported] **********
+ok: [rhel9]
+
+TASK [chrome-cis : PRELIM | AUDIT | Gather installed packages] *****************
+ok: [rhel9]
+
+TASK [chrome-cis : PRELIM | AUDIT | Stop when Chrome is not installed and install is off | Report] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : PRELIM | AUDIT | Stop when Chrome is not installed and install is off | End this host] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : PRELIM | AUDIT | Read the current CIS policy file] **********
+ok: [rhel9]
+
+TASK [chrome-cis : PRELIM | AUDIT | Start the policy set] **********************
+ok: [rhel9]
+
+TASK [chrome-cis : INSTALL | Google Chrome | Import Google's package signing key] ***
+changed: [rhel9]
+
+TASK [chrome-cis : INSTALL | Google Chrome | Add the Google Chrome repository] ***
+changed: [rhel9]
+
+TASK [chrome-cis : INSTALL | Google Chrome | Install google-chrome-stable 143.0.7499.40] ***
+changed: [rhel9]
+
+TASK [chrome-cis : INSTALL | Chromium | Import the EPEL signing key] ***********
+skipping: [rhel9]
+
+TASK [chrome-cis : INSTALL | Chromium | Enable EPEL (install epel-release)] ****
+skipping: [rhel9]
+
+TASK [chrome-cis : INSTALL | Chromium | Install chromium from EPEL 143.0.7499.40] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : INSTALL | Refresh installed packages] ***********************
+ok: [rhel9]
+
+TASK [chrome-cis : 1.1.1 | PATCH | Ensure 'Cross-origin HTTP Authentication prompts' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.2.1 | PATCH | Ensure 'Configure the list of domains on which Safe Browsing will not trigger warnings' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.2.2 | PATCH | Ensure 'Safe Browsing Protection Level' is set to 'Enabled: Safe Browsing is active in the standard mode.' or higher] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : 1.3 | PATCH | Ensure 'Allow Google Cast to connect to Cast devices on all IP addresses' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.4 | PATCH | Ensure 'Allow queries to a Google time service' is set to 'Enabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.5 | PATCH | Ensure 'Allow the audio sandbox to run' is set to 'Enabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.6 | PATCH | Ensure 'Ask where to save each file before downloading' is set to 'Enabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.7 | PATCH | Ensure 'Continue running background apps when Google Chrome is closed' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.8 | PATCH | Ensure 'Control SafeSites adult content filtering' is set to 'Enabled: Filter top level sites (but not embedded iframes) for adult content'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.9 | PATCH | Ensure 'Determine the availability of variations' is set to 'Enable all variations'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.10 | PATCH | Ensure 'Disable Certificate Transparency enforcement for a list of Legacy Certificate Authorities' is set to 'Disabled'] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : 1.11 | PATCH | Ensure 'Disable Certificate Transparency enforcement for a list of subjectPublicKeyInfo hashes' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.12 | PATCH | Ensure 'Disable Certificate Transparency enforcement for a list of URLs' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.13 | PATCH | Ensure 'Disable saving browser history' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.14 | PATCH | Ensure 'DNS interception checks enabled' is set to 'Enabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.15 | PATCH | Ensure 'Enable component updates in Google Chrome' is set to 'Enabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.16 | PATCH | Ensure 'Enable globally scoped HTTP auth cache' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.17 | PATCH | Ensure 'Enable online OCSP/CRL checks' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.18 | PATCH | Ensure 'Enable security warnings for command-line flags' is set to 'Enabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.19 | PATCH | Ensure 'Enable third party software injection blocking' is set to 'Enabled'] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : 1.20 | PATCH | Ensure 'Enables managed extensions to use the Enterprise Hardware Platform API' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.21 | PATCH | Ensure 'Ephemeral profile' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.22 | PATCH | Ensure 'Import autofill form data from default browser on first run' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.23 | PATCH | Ensure 'Import of homepage from default browser on first run' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.24 | PATCH | Ensure 'Import search engines from default browser on first run' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.25 | PATCH | Ensure 'List of names that will bypass the HSTS policy check' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.26 | PATCH | Ensure 'Origins or hostname patterns for which restrictions on insecure origins should not apply' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.27 | PATCH | Ensure 'Suppress lookalike domain warnings on domains' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.28 | PATCH | Ensure 'Suppress the unsupported OS warning' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.29 | PATCH | Ensure 'URLs for which local IPs are exposed in WebRTC ICE candidates' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.2.1 | PATCH | Ensure 'Control use of insecure content exceptions' is set to 'Enabled: Do not allow any site to load mixed content'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.2.2 | PATCH | Ensure 'Control use of the Web Bluetooth API' is set to 'Enabled: Do not allow any site to request access to Bluetooth devices via the Web Bluetooth API'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.2.3 | PATCH | Ensure 'Control use of the WebUSB API' is set to 'Enabled: Do not allow any site to request access to USB devices via the WebUSB API'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.2.4 | PATCH | Ensure 'Default notification setting' is set to 'Enabled: Do not allow any site to show desktop notifications'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.2.5 | PATCH | Ensure 'Allow local file access to file:// URLs on these sites in the PDF Viewer' Is Disabled] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.3.1 | PATCH | Ensure 'Blocks external extensions from being installed' is set to 'Enabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.3.2 | PATCH | Ensure 'Configure allowed app/extension types' is set to 'Enabled: extension, hosted_app, platform_app, theme'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.3.3 | PATCH | Ensure 'Configure extension installation blocklist' is set to 'Enabled: *'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.3.3 | PATCH | Ensure 'Configure extension installation blocklist' is set to 'Enabled: *' | ExtensionInstallAllowlist] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : 2.3.4 | PATCH | Ensure 'Default third-party storage partitioning setting' Is Enabled and Blocked] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : 2.3.5 | PATCH | Ensure 'Block third-party storage partitioning for these origins' Is Configured] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : 2.3.6 | PATCH | Ensure 'Control Manifest v2 extension availability' Is Set to Forced Only] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : 2.3.7 | PATCH | Ensure 'Control availability of extensions unpublished on the Chrome Web Store' Is Disabled] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.4.1 | PATCH | Ensure 'Supported authentication schemes' is set to 'Enabled: ntlm, negotiate'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.5.1 | PATCH | Ensure 'Configure native messaging blocklist' is set to 'Enabled: *'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.5.1 | PATCH | Ensure 'Configure native messaging blocklist' is set to 'Enabled: *' | NativeMessagingAllowlist] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : 2.6.1 | PATCH | Ensure 'Enable saving passwords to the password manager' is Explicitly Configured] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : 2.7.1 | PATCH | Ensure 'Enable Google Cloud Print Proxy' is set to 'Disabled'] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : 2.8.1 | PATCH | Ensure 'Allow remote access connections to this machine' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.8.2 | PATCH | Ensure 'Allow remote users to interact with elevated windows in remote assistance sessions' is set to 'Disabled'] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : 2.8.3 | PATCH | Ensure 'Configure the required domain names for remote access clients' is set to 'Enabled'  with a domain defined] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.8.4 | PATCH | Ensure 'Enable curtaining of remote access hosts' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.8.5 | PATCH | Ensure 'Enable firewall traversal from remote access host' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.8.6 | PATCH | Ensure 'Enable or disable PIN-less authentication for remote access hosts' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.8.7 | PATCH | Ensure 'Enable the use of relay servers by the remote access host' is set to 'Disabled'.] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.9.1 | PATCH | Ensure 'Enable First-Party Sets' Is Disabled] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : 2.10.1 | PATCH | Ensure 'Allow automatic sign-in to Microsoft cloud identity providers' Is Enabled] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : 2.11 | PATCH | Ensure 'Allow download restrictions' is set to 'Enabled: Block malicious downloads'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.12 | PATCH | Ensure 'Allow proceeding from the SSL warning page' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.13 | PATCH | Ensure 'Disable proceeding from the Safe Browsing warning page' is set to 'Enabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.14 | PATCH | Ensure 'Require Site Isolation for every site' is set to 'Enabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.15 | PATCH | Ensure 'Force Google SafeSearch' is set to 'Enabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.16 | PATCH | Ensure 'Notify a user that a browser relaunch or device restart is recommended or required' is set to 'Enabled: Show a recurring prompt to the user indication that a relaunch is required'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.17 | PATCH | Ensure 'Proxy settings' is set to 'Enabled' and does not contain "ProxyMode": "auto_detect"] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.18 | PATCH | Ensure 'Require online OCSP/CRL checks for local trust anchors' is set to 'Enabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.19 | PATCH | Ensure 'Set the time period for update notifications' is set to 'Enabled: 86400000'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.20 | PATCH | Ensure 'Allow Web Authentication requests on sites with broken TLS certificates' Is Disabled] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.21 | PATCH | Ensure 'Allow reporting of domain reliability related data' Is Disabled] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.22 | PATCH | Ensure 'Enable TLS Encrypted ClientHello' Is Enabled] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.23 | PATCH | Ensure 'Determines whether the built-in certificate verifier will enforce constraints encoded into trust anchors loaded from the platform trust store' Is Enabled] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : 2.24 | PATCH | Ensure 'Keep browsing data when creating enterprise profile by default' Is Enabled] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.25 | PATCH | Ensure 'Allow file or directory picker APIs to be called without prior user gesture' Is Disabled] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.26 | PATCH | Ensure 'Enable Google Search Side Panel' Is Disabled] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.27 | PATCH | Ensure 'Http Allowlist' Is Properly Configured] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.28 | PATCH | Ensure 'Enable automatic HTTPS upgrades' Is Enabled] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.29 | PATCH | Ensure 'Insecure Hashes in TLS Handshakes Enabled' Is Disabled] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : 2.30 | PATCH | Ensure 'Enable Renderer App Container' Is Enabled] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : 2.31 | PATCH | Ensure 'Enable strict MIME type checking for worker scripts' Is Enabled] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.32 | PATCH | Ensure 'Allow remote debugging' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 3.1.1 | PATCH | Ensure 'Default cookies setting' is set to 'Enabled: Keep cookies for the duration of the session'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 3.1.2 | PATCH | Ensure 'Default geolocation setting' is set to 'Enabled: Do not allow any site to track the users' physical location'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 3.2.1 | PATCH | Ensure 'Enable Google Cast' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 3.3 | PATCH | Ensure 'Allow websites to query for available payment methods' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 3.4 | PATCH | Ensure 'Block third party cookies' is set to 'Enabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 3.5 | PATCH | Ensure 'Browser sign in settings' is set to 'Enabled: Disabled browser sign-in'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 3.6 | PATCH | Ensure 'Control how Chrome Cleanup reports data to Google' is set to 'Disabled'] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : 3.7 | PATCH | Ensure 'Disable synchronization of data with Google' is set to 'Enabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 3.8 | PATCH | Ensure 'Enable alternate error pages' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 3.9 | PATCH | Ensure 'Enable deleting browser and download history' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 3.10 | PATCH | Ensure 'Enable predict network actions` is set to 'Enabled: Do not predict actions on any network connection'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 3.11 | PATCH | Ensure 'Enable or disable spell checking web service' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 3.12 | PATCH | Ensure 'Enable reporting of usage and crash-related data' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 3.13 | PATCH | Ensure 'Enable Safe Browsing for trusted sources' is set to 'Disabled'] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : 3.14 | PATCH | Ensure 'Enable search suggestions' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 3.15 | PATCH | Ensure 'Enable Translate' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 3.16 | PATCH | Ensure 'Enable URL-keyed anonymized data collection' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 4.1.1 | PATCH | Ensure 'Allow or deny screen capture' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 4.2.1 | PATCH | Ensure 'Control use of the Serial API' is set to 'Enabled: Do not allow any site to request access to serial ports via the Serial API'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 4.2.2 | PATCH | Ensure 'Default Sensors Setting' is set to 'Enabled: Do not allow any site to access sensors'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 4.2.3 | PATCH | Ensure 'Allow clipboard for these sites' Is Configured] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 4.2.4 | PATCH | Ensure 'Block clipboard on these sites' Is Configured] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 4.2.5 | PATCH | Ensure 'Default clipboard setting' Is 'Enabled' to 'Deny Permissions'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 4.2.6 | PATCH | Ensure 'Default Window Management permissions setting' Is 'Enabled' to 'Deny Permission'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 4.2.7 | PATCH | Ensure 'Allow Window Management permission on these sites' Is Configured] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 4.2.8 | PATCH | Ensure 'Block Window Management permission on these sites' Is Configured] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 4.3 | PATCH | Ensure 'Allow invocation of file selection dialogs' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 4.4 | PATCH | Ensure 'Allow or deny audio capture' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 4.5 | PATCH | Ensure 'Allow or deny video capture' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 4.6 | PATCH | Ensure 'Allow user feedback' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 4.7 | PATCH | Ensure 'Controls the mode of DNS-over-HTTPS' is set to 'Enabled: DNS-over-HTTPS without insecure fallback'] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : 4.8 | PATCH | Ensure 'Enable AutoFill for addresses' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 4.9 | PATCH | Ensure 'Enable AutoFill for credit cards' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 4.10 | PATCH | Ensure 'Import saved passwords from default browser on first run' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 4.11 | PATCH | Ensure 'List of types that should be excluded from synchronization' is set to 'Enabled: passwords'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 4.12 | PATCH | Ensure 'Allow or deny screen capture' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 5.1 | PATCH | Ensure 'Enable guest mode in browser' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 5.2 | PATCH | Ensure 'Incognito mode availability' is set to 'Enabled: Incognito mode disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 5.3 | PATCH | Ensure 'Set disk cache size, in bytes' is set to 'Enabled: 250609664'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : POST | PATCH | Create the managed policy folder] ************
+changed: [rhel9]
+
+TASK [chrome-cis : POST | PATCH | Write chrome_cis.json] ***********************
+changed: [rhel9]
+
+TASK [chrome-cis : POST | AUDIT | Report] **************************************
+ok: [rhel9] => {
+    "msg": {
+        "benchmark": "CIS Google Chrome Benchmark v3.0.0",
+        "browser": {
+            "google-chrome-stable": "143.0.7499.40"
+        },
+        "levels": "Level 1 on, Level 2 on",
+        "policies_written": 98,
+        "policy_file": "/etc/opt/chrome/policies/managed/chrome_cis.json"
+    }
+}
+
+PLAY RECAP *********************************************************************
+rhel9                      : ok=112  changed=5    unreachable=0    failed=0    skipped=23   rescued=0    ignored=0   
+

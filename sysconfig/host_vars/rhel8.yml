@@ -1,0 +1,4 @@
+---
+chrome_cis_browser: chrome
+chrome_cis_install: true
+chrome_cis_version: ""

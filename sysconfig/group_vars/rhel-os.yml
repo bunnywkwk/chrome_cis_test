@@ -1,6 +1,6 @@
 ---
 # Browser and install
-chrome_cis_browser: chromium # chrome or chromium
+chrome_cis_install_browser: chromium # chrome or chromium
 chrome_cis_install: true # false = harden an existing install only
 chrome_cis_channel: stable # Chrome only: stable, beta, unstable, canary
 chrome_cis_version: "" # "" = newest; e.g. "143.0.7499.40" (oldest Chrome on Google's server)

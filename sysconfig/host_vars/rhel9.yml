@@ -1,2 +1,21 @@
 ---
-chrome_cis_browser: chromium
+chrome_cis_install: false
+
+# TEMPORARY: N/A test (removed + Windows-only policies). Remove after the test.
+chrome_cis_rule_1_10: true
+chrome_cis_rule_1_19: true
+chrome_cis_rule_2_1_1: true
+chrome_cis_rule_2_1_2: true
+chrome_cis_rule_2_3_4: true
+chrome_cis_rule_2_3_5: true
+chrome_cis_rule_2_3_6: true
+chrome_cis_rule_2_7_1: true
+chrome_cis_rule_2_8_2: true
+chrome_cis_rule_2_9_1: true
+chrome_cis_rule_2_10_1: true
+chrome_cis_rule_2_23: true
+chrome_cis_rule_2_29: true
+chrome_cis_rule_2_30: true
+chrome_cis_rule_3_6: true
+chrome_cis_rule_3_13: true
+chrome_cis_third_party_storage_blocked_origins: ["https://example.com"] # 2.3.5 is only written when set

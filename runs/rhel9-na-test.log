@@ -1,0 +1,126 @@
+
+PLAY [Harden Google Chrome to CIS] *********************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [rhel9]
+
+TASK [chrome-cis : PRELIM | AUDIT | Check ansible-core version] ****************
+ok: [rhel9] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [chrome-cis : PRELIM | AUDIT | Check the target OS is supported] **********
+ok: [rhel9] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [chrome-cis : INSTALL | Google Chrome | Import Google's package signing key] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : INSTALL | Google Chrome | Add the Google Chrome repository] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : INSTALL | Google Chrome | Install google-chrome-stable newest] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : INSTALL | Chromium | Import the EPEL signing key] ***********
+skipping: [rhel9]
+
+TASK [chrome-cis : INSTALL | Chromium | Enable EPEL (install epel-release)] ****
+skipping: [rhel9]
+
+TASK [chrome-cis : INSTALL | Chromium | Install chromium from EPEL newest] *****
+skipping: [rhel9]
+
+TASK [chrome-cis : PRELIM | AUDIT | Gather installed packages] *****************
+ok: [rhel9]
+
+TASK [chrome-cis : PRELIM | AUDIT | Discover installed browsers] ***************
+ok: [rhel9]
+
+TASK [chrome-cis : PRELIM | AUDIT | Stop when no browser is installed and install is off | Report] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : PRELIM | AUDIT | Stop when no browser is installed and install is off | End this host] ***
+skipping: [rhel9]
+
+TASK [chrome-cis : PRELIM | AUDIT | Start the policy set] **********************
+ok: [rhel9]
+
+TASK [chrome-cis : 1.10 | PATCH | Ensure 'Disable Certificate Transparency enforcement for a list of Legacy Certificate Authorities' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 1.19 | PATCH | Ensure 'Enable third party software injection blocking' is set to 'Enabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.1.1 | PATCH | Ensure 'Update policy override' is set to 'Enabled' with 'Always allow updates (recommended)' or 'Automatic silent updates' specified] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.1.2 | PATCH | Ensure 'Auto-update check period override' is set to any value except '0'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.3.4 | PATCH | Ensure 'Default third-party storage partitioning setting' Is Enabled and Blocked] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.3.5 | PATCH | Ensure 'Block third-party storage partitioning for these origins' Is Configured] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.3.6 | PATCH | Ensure 'Control Manifest v2 extension availability' Is Set to Forced Only] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.7.1 | PATCH | Ensure 'Enable Google Cloud Print Proxy' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.8.2 | PATCH | Ensure 'Allow remote users to interact with elevated windows in remote assistance sessions' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.9.1 | PATCH | Ensure 'Enable First-Party Sets' Is Disabled] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.10.1 | PATCH | Ensure 'Allow automatic sign-in to Microsoft cloud identity providers' Is Enabled] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.23 | PATCH | Ensure 'Determines whether the built-in certificate verifier will enforce constraints encoded into trust anchors loaded from the platform trust store' Is Enabled] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.29 | PATCH | Ensure 'Insecure Hashes in TLS Handshakes Enabled' Is Disabled] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 2.30 | PATCH | Ensure 'Enable Renderer App Container' Is Enabled] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 3.6 | PATCH | Ensure 'Control how Chrome Cleanup reports data to Google' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : 3.13 | PATCH | Ensure 'Enable Safe Browsing for trusted sources' is set to 'Disabled'] ***
+ok: [rhel9]
+
+TASK [chrome-cis : POST | PATCH | Create the managed policy folders] ***********
+ok: [rhel9] => (item=/etc/opt/chrome/policies/managed)
+ok: [rhel9] => (item=/etc/chromium/policies/managed)
+
+TASK [chrome-cis : POST | PATCH | Write chrome_cis.json] ***********************
+changed: [rhel9] => (item=/etc/opt/chrome/policies/managed)
+changed: [rhel9] => (item=/etc/chromium/policies/managed)
+
+TASK [chrome-cis : POST | AUDIT | Report] **************************************
+ok: [rhel9] => {
+    "msg": {
+        "benchmark": "CIS Google Chrome Benchmark v3.0.0",
+        "chrome": true,
+        "chromium": true,
+        "levels": "Level 1 on, Level 2 on",
+        "policies_written": "16",
+        "policy_file": "chrome_cis.json",
+        "policy_folders": [
+            "/etc/opt/chrome/policies/managed",
+            "/etc/chromium/policies/managed"
+        ]
+    }
+}
+
+PLAY RECAP *********************************************************************
+rhel9                      : ok=25   changed=1    unreachable=0    failed=0    skipped=7    rescued=0    ignored=0   
+

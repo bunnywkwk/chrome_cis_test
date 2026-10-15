@@ -1,3 +1,5 @@
 ---
-chrome_cis_browser: chromium
-chrome_cis_install: true
+# Round A: Chrome and Chromium installed by hand, install off -> both found and hardened
+chrome_cis_install: false
+# Round B: one site exception -> its policy is removed
+# chrome_cis_rule_4_3: false                     # allow upload / save as

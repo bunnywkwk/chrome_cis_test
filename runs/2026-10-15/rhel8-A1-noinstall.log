@@ -1,0 +1,52 @@
+
+PLAY [Harden Google Chrome to CIS] *********************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [rhel8]
+
+TASK [chrome-cis : PRELIM | AUDIT | Check ansible-core version] ****************
+ok: [rhel8] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [chrome-cis : PRELIM | AUDIT | Check the target OS is supported] **********
+ok: [rhel8] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [chrome-cis : INSTALL | Google Chrome | Import Google's package signing key] ***
+skipping: [rhel8]
+
+TASK [chrome-cis : INSTALL | Google Chrome | Add the Google Chrome repository] ***
+skipping: [rhel8]
+
+TASK [chrome-cis : INSTALL | Google Chrome | Install google-chrome-stable newest] ***
+skipping: [rhel8]
+
+TASK [chrome-cis : INSTALL | Chromium | Import the EPEL signing key] ***********
+skipping: [rhel8]
+
+TASK [chrome-cis : INSTALL | Chromium | Enable EPEL (install epel-release)] ****
+skipping: [rhel8]
+
+TASK [chrome-cis : INSTALL | Chromium | Install chromium from EPEL newest] *****
+skipping: [rhel8]
+
+TASK [chrome-cis : PRELIM | AUDIT | Gather installed packages] *****************
+ok: [rhel8]
+
+TASK [chrome-cis : PRELIM | AUDIT | Discover installed browsers] ***************
+ok: [rhel8]
+
+TASK [chrome-cis : PRELIM | AUDIT | Stop when no browser is installed and install is off | Report] ***
+ok: [rhel8] => {
+    "msg": "No Google Chrome or Chromium package on rhel8 and chrome_cis_install is false: nothing to harden."
+}
+
+TASK [chrome-cis : PRELIM | AUDIT | Stop when no browser is installed and install is off | End this host] ***
+
+PLAY RECAP *********************************************************************
+rhel8                      : ok=6    changed=0    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
+

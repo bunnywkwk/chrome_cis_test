@@ -1,4 +1,9 @@
 ---
-chrome_cis_browser: chrome
-chrome_cis_install: true
-chrome_cis_version: ""
+# Round A1: no browser, install off -> clean stop ("nothing to harden")
+# chrome_cis_install: false
+# Round A2: install the newest Chrome
+# chrome_cis_install: true
+# chrome_cis_install_browser: chrome
+# chrome_cis_version: ""
+# Round B: add Chromium from EPEL 8 (frozen at 133) -> both browsers, gated policies in both files
+chrome_cis_install_browser: chromium
